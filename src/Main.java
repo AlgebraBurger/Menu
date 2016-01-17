@@ -1,9 +1,6 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -51,9 +48,21 @@ public class Main extends Application{
         paste.setDisable(true);
         editMenu.getItems().add(paste);
 
+        //Help menu
+        Menu helpMenu = new Menu("Help");
+        CheckMenuItem showLines = new CheckMenuItem("Show Line Numbers");
+        showLines.setOnAction(e -> {
+            if(showLines.isSelected()){
+                System.out.println("Program will now display line nymbers");
+            }else{
+                System.out.println("Hiding Line Number");
+            }
+        });
+        helpMenu.getItems().addAll(showLines);
+
         //Main menu bar
         MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(fileMenu,editMenu);
+        menuBar.getMenus().addAll(fileMenu,editMenu,helpMenu);
 
         layout = new BorderPane();
         layout.setTop(menuBar);
