@@ -30,6 +30,8 @@ public class Main extends Application{
         fileMenu.getItems().add(new MenuItem("New Project..."));
         fileMenu.getItems().add(new MenuItem("New Module..."));
         fileMenu.getItems().add(new MenuItem("Import Project..."));
+        fileMenu.getItems().add(new MenuItem("Settings..."));
+        fileMenu.getItems().add(new MenuItem("Exit..."));
 
         //Main menu bar
         MenuBar menuBar = new MenuBar();
